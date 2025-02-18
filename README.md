@@ -491,15 +491,14 @@ Use OpenAPI Editor to edit OpenAPI Schema. You can use it to edit OpenAPI Schema
 
 From [final_state.yaml](final_state.yaml) file you can see the final state of the API specification. Your task is to implement the API step by step.
 
-### 4.1. Implement Order and OrderItem classes and list all orders
+### 4.1. Implement Order and OrderItem classes and list all orders endpoint
 
 
 
-### 4.2. Implement delete order by id
+### 4.2. Implement delete order by id endpoint
 
 
-
-### 4.3. Implement create order
+### 4.3. Implement create order endpoint
 
 
 
