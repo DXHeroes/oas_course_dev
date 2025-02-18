@@ -12,4 +12,14 @@ import dev.dxheroes.dto.MenuItem;
 public class MenuService {
     private final List<MenuItem> menuItems = new ArrayList<>();
     private final AtomicInteger idGenerator = new AtomicInteger(1);
+
+    public MenuItem sample() {
+        return new MenuItem() {{
+            setId(1);
+            setName("Cappuccino");
+            setDescription("A delicious cappuccino made with our finest espresso");
+            setPrice(3.50);
+        }};
+    }
+    
 }
