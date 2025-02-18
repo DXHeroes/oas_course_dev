@@ -3,7 +3,7 @@ Set of materials for developer OAS course
 
 
 # Presentation:
-[CSAS_analytik.pdf](https://drive.google.com/drive/folders/1LZ-4SooXNu0EmayqRARqjrN5jAdiL_oq?usp=sharing)
+[CSAS_analytik.pdf](https://drive.google.com/file/d/1YeKFbugLc_i7XBJJVNeVEBYbpDEFoUr5/view?usp=sharing)
 
 
 # Practical excercises
@@ -486,8 +486,6 @@ Use OpenAPI Editor to edit OpenAPI Schema. You can use it to edit OpenAPI Schema
 ## 4. Implementing OAS
 
 <!-- TODO: prerekvizity ke spuštění -->
-<!-- TODO: link na prezentaci -->
-<!-- In memory DB na Orders a Menu Items-->
 
 From [final_state.yaml](final_state.yaml) file you can see the final state of the API specification. Your task is to implement the API step by step.
 
