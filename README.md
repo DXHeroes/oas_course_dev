@@ -489,6 +489,8 @@ Use OpenAPI Editor to edit OpenAPI Schema. You can use it to edit OpenAPI Schema
 <!-- TODO: link na prezentaci -->
 <!-- In memory DB na Orders a Menu Items-->
 
+From [final_state.yaml](final_state.yaml) file you can see the final state of the API specification. Your task is to implement the API step by step.
+
 ### 4.1. Implement Order and OrderItem classes and list all orders
 
 

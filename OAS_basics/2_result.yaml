@@ -46,7 +46,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-  /menu{menuId}:
+  /menu/{menuId}:
     get:
       tags:
         - Menu

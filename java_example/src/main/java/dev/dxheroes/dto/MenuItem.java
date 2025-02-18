@@ -15,34 +15,34 @@ enum ItemSize {
 }
 
 public class MenuItem {
-    @JsonProperty("id")
+    @JsonProperty(value = "id", required = true)
     private Integer id;
 
     @NotNull
     @Size(min = 3, max = 50)
-    @JsonProperty("name")
+    @JsonProperty(value = "name", required = true)
     private String name;
 
     @Size(max = 100)
-    @JsonProperty("description")
+    @JsonProperty(value = "description", required = false)
     private String description;
 
     @NotNull
     @Min(0)
-    @JsonProperty("price")
+    @JsonProperty(value = "price", required = true)
     private Double price;
 
-    @JsonProperty("size")
+    @JsonProperty(value = "size", required = false)
     private ItemSize size;
 
     @Size(min = 1, max = 5)
-    @JsonProperty("extraItems")
+    @JsonProperty(value = "extraItems", required = false)
     private List<String> extraItems;
 
-    @JsonProperty("modifiers")
+    @JsonProperty(value = "modifiers", required = false)
     private List<Modifier> modifiers;
 
-    @JsonProperty("promotion")
+    @JsonProperty(value = "promotion", required = false)
     private Promotion promotion;
 
     public Integer getId() {

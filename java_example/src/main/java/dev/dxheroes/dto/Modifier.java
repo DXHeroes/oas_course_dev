@@ -8,12 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Modifier {
     @NotNull
-    @JsonProperty("name")
+    @JsonProperty(value = "name", required = true)
     private String name;
 
     @NotNull
     @Min(1)
-    @JsonProperty("options")
+    @JsonProperty(value = "options", required = true)
     private List<String> options;
     
 }

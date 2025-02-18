@@ -24,7 +24,7 @@ servers:
   - url: https://sandbox-api.coffeshop.com:8443/v1
     description: Sandbox server (uses test data)
 paths:
-  /menu{menuId}:
+  /menu/{menuId}:
     get:
       tags:
         - Menu
