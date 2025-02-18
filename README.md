@@ -1,5 +1,5 @@
-# oas_course
-Set of materials for OAS course
+# oas_course_developer
+Set of materials for developer OAS course
 
 
 # Presentation:
@@ -482,3 +482,24 @@ Use Postman to test OpenAPI Schema. You can use it to import OpenAPI Schema and 
 Use OpenAPI Editor to edit OpenAPI Schema. You can use it to edit OpenAPI Schema, mock server and test API.
 
   ![OpenAPI Editor](images/swagger.png)
+
+## 4. Implementing OAS
+
+<!-- TODO: prerekvizity ke spuštění -->
+<!-- TODO: link na prezentaci -->
+<!-- In memory DB na Orders a Menu Items-->
+
+### 4.1. Implement Order and OrderItem classes and list all orders
+
+
+
+### 4.2. Implement delete order by id
+
+
+
+### 4.3. Implement create order
+
+
+
+
+
