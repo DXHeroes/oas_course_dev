@@ -28,4 +28,10 @@ public class OrderService {
             );
         }
     }
+
+    public Order createOrder(Order order) {
+        order.setId(idGenerator.getAndIncrement());
+        orders.add(order);
+        return order;
+    }
 }
