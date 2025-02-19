@@ -504,15 +504,23 @@ Create the following classes:
 **Objective:**
 Implement the `Order` and `OrderItem` classes and the `getOrders` endpoint.
 
+**Result:**
+
+[possible solution](https://github.com/DXHeroes/oas_course_dev/commit/0ad8fede80c0b77dc2e4bbe7ebe0583a3cbf3942)
 
 ### 4.2. Implement delete order by id endpoint
 
 Implement the `deleteOrderById` endpoint.
 
+**Result:**
+
+[possible solution](https://github.com/DXHeroes/oas_course_dev/commit/b42cdf907b34d9971f4a58fbe27fcf1619237b7c)
 
 ### 4.3. Implement create order endpoint
 
 Implement the `createOrder` endpoint.
 
+**Result:**
 
+[possible solution](https://github.com/DXHeroes/oas_course_dev/commit/f514b66971163669b654263dac5bc46433b8a202)
 
