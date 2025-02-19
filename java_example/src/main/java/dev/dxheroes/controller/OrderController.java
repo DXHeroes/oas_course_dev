@@ -3,7 +3,9 @@ package dev.dxheroes.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.dxheroes.dto.Order;
@@ -20,5 +22,11 @@ public class OrderController {
     @GetMapping("/orders")
     public ResponseEntity<List<Order>> getOrders() {
         return ResponseEntity.ok(orderService.getAllOrders());
+    }
+
+    @DeleteMapping("/orders/{orderId}")
+    public ResponseEntity<String> deleteOrderById(@PathVariable Integer orderId) {
+        orderService.deleteOrder(orderId);    
+        return ResponseEntity.noContent().build();
     }
 }

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import dev.dxheroes.dto.Order;
 
@@ -15,5 +17,15 @@ public class OrderService {
 
     public List<Order> getAllOrders() {
         return new ArrayList<>(orders);
+    }
+
+    public void deleteOrder(Integer orderId) {
+        boolean removed = orders.removeIf(order -> order.getId().equals(orderId));
+        if (!removed) {
+            throw new ResponseStatusException(
+                HttpStatus.NOT_FOUND,
+                "Order not found with id: " + orderId
+            );
+        }
     }
 }
