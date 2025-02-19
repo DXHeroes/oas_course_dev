@@ -8,10 +8,11 @@ Set of materials for developer OAS course
 
 # Practical excercises
 
-This section is divided into 3 sections:
+This section is divided into 4 sections:
  - JSON Schema - basic of JSON Schema exercises
  - OpenAPI Basics - basics of OpenAPI exercises
  - Using OpenAPI Schema in practice - using OpenAPI Schema in practice 
+ - Implementing OAS - implementing OAS in simple Java project
 
  ### Used tools:
 
@@ -487,18 +488,31 @@ Use OpenAPI Editor to edit OpenAPI Schema. You can use it to edit OpenAPI Schema
 
 <!-- TODO: prerekvizity ke spuštění -->
 
-From [final_state.yaml](final_state.yaml) file you can see the final state of the API specification. Your task is to implement the API step by step.
+From [final_state.yaml](final_state.yaml) file you can see the final state of the API specification. Your task is to implement the API in prepared Java project. Project is already prepared with some of the classes implemented.
+
+It can be run using `./scripts/launch_java.sh` command. It will start the Spring Boot application on localhost:8080. You can use it to test your implementation.
 
 ### 4.1. Implement Order and OrderItem classes and list all orders endpoint
 
+Create the following classes:
+
+- `Order` class matches the `Order` schema from the API specification
+- `OrderItem` class matches the `OrderItem` schema from the API specification
+- `OrderService` class implements the endpoint `getOrders` from the API specification. DB is just in memory list of orders.
+- `OrderController` class implements the endpoint `getOrders` from the API specification
+
+**Objective:**
+Implement the `Order` and `OrderItem` classes and the `getOrders` endpoint.
 
 
 ### 4.2. Implement delete order by id endpoint
 
+Implement the `deleteOrderById` endpoint.
+
 
 ### 4.3. Implement create order endpoint
 
-
+Implement the `createOrder` endpoint.
 
 
 
