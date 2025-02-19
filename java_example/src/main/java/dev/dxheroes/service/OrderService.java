@@ -34,4 +34,25 @@ public class OrderService {
         orders.add(order);
         return order;
     }
+
+    public Order getOrderById(Integer orderId) {
+        if (orderId == null) {
+            throw new IllegalArgumentException("Order ID cannot be null");
+        }
+        if (orderId <= 0) {
+            throw new IllegalArgumentException("Order ID must be a positive number");
+        }
+        return orders.stream()
+                .filter(order -> order.getId().equals(orderId))
+                .findFirst()
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found"));
+    }
+
+    public Order updateOrder(Integer orderId, Order order) {
+        Order existingOrder = getOrderById(orderId);
+        existingOrder.setCustomerName(order.getCustomerName());
+        existingOrder.setItems(order.getItems());
+        existingOrder.setTotalPrice(order.getTotalPrice()); 
+        return existingOrder;
+    }
 }
