@@ -9,9 +9,9 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 enum ItemSize {
-    SMALL,
-    MEDIUM,
-    LARGE
+    Small,
+    Medium,
+    Large;
 }
 
 public class MenuItem {
@@ -32,16 +32,20 @@ public class MenuItem {
     @JsonProperty(value = "price", required = true)
     private Double price;
 
+    @NotNull
     @JsonProperty(value = "size", required = false)
     private ItemSize size;
 
-    @Size(min = 1, max = 5)
+    @NotNull
+    @Size(min = 0, max = 5)
     @JsonProperty(value = "extraItems", required = false)
     private List<String> extraItems;
 
+    @NotNull
     @JsonProperty(value = "modifiers", required = false)
     private List<Modifier> modifiers;
 
+    @NotNull
     @JsonProperty(value = "promotion", required = false)
     private Promotion promotion;
 

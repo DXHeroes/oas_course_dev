@@ -6,11 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Error {
     @NotNull
-    @JsonProperty("code")
+    @JsonProperty(value = "code", required = true)
     private Integer code;
 
     @NotNull
-    @JsonProperty("message")
+    @JsonProperty(value = "message", required = true)
     private String message;
 
     public Error(Integer code, String message) {
