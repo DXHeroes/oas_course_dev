@@ -1,0 +1,15 @@
+.openapi-generator-ignore
+apis/MenuApi.ts
+apis/OrdersApi.ts
+apis/index.ts
+index.ts
+models/MenuItem.ts
+models/MenuItemModifiersInner.ts
+models/MenuItemPromotion.ts
+models/MenuItemPromotionOneOf.ts
+models/MenuItemPromotionOneOf1.ts
+models/ModelError.ts
+models/Order.ts
+models/OrderItem.ts
+models/index.ts
+runtime.ts

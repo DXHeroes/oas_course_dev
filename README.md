@@ -524,3 +524,61 @@ Implement the `createOrder` endpoint.
 
 [possible solution](https://github.com/DXHeroes/oas_course_dev/commit/f514b66971163669b654263dac5bc46433b8a202)
 
+## 5. Using OAS for code generation (optional)
+
+Requirements:
+- Node.js
+- Git
+- Java
+- Maven
+
+### 5.1. Setup project
+
+1. Clone the repository
+```bash
+git clone git@github.com:DXHeroes/oas_course_dev.git
+cd oas_course_dev/generation
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Generate code
+
+```bash
+npx openapi-generator-cli generate
+```
+
+This will generate code in `output` folder.
+
+**Client**
+
+Client is generated in `output/v3.0/typescript-fetch/coffee-shop-client` folder. It is using `fetch` to call the API.
+Use client of client in practice  is easy, often it is used as a dependency in other projects and regenrated when API is changed. Technicallty it is done by using webhooks and opening PRs in the repository.
+
+Flow is the following:
+
+1. API is changed in the source repository
+2. Webhook is triggered
+3. Webhook opens PR in the repository with generated client
+4. You can review the changes, test the client and merge the PR
+5. On merge, webhook is triggered and in your FE/Mobile project is opened PR with new version of the client
+
+
+**Server**
+
+Server is generated in `output/v3.0/kotlin-spring/coffee-shop` folder. It is using Spring Boot and Kotlin. It contains controllers and models for all the endpoints from the API specification. Services are missing, same as test implementation.
+
+Flow is the following:
+
+1. API is changed in the source repository
+2. Webhook is triggered
+3. Webhook opens PR in the repository with generated server side components (BE) 
+4. You can review the changes, test the server and merge the PR
+
+
+**Diagram:**
+
+[![](https://mermaid.ink/img/pako:eNqlVM1q20AQfpVBkJ4ccvehEEuW5Th2jB1SqBTKWppIW8u7YldKauJADrmW0h96CBT30EMfodC3yQvUj9DdleLI-SktvWlH8833zXyze26FPEKracWCZAkcOgELGMDWFnQZzSlJwU4Ii1EHd_3dYRfGGYZAJYQmHgFlIHkhQgSBGZc052IOfaLCq-XHL6vl--83l29Xyw8_j2F7-_niBU4SzqdwKGgco8BoAS3f7u7YDgxphillCKOCSdiGfcpyICyCI5LSiOQIa_7V8tvn47VUO6WoUt2Un-mILCZlN1V87PRghDEyFCSn3KAAWloO2H6njONttqQRGkjFoXNtI31chCFKuQDHP8iQwXCkmy-rrzu_h4LOmhZcQlM1MEP76kQd_Jvrr79-vIMBz-nJHLxiRlizrvohuD7PksUxBdt-7Y_Sc0rxrAGHKPOGGWEfRYxKcQVqP-4FHAhwUPUWkRbPTS8LcP0BnlXNuu2dPp8oJTAU_DWGubKpkAhMZdybmWt0dTZ0uZRRmTSe1FdnMGWUkrXLYxSnKB66XMVttcdP2uzd2VxPr8n1Ni3ublhcQh532XvaZe8PLtdl_I3NXVNx75_GWdldH2JbCC7AUznqpsU6WK6i6X6z9pu766YgNY1dKQtU11ajvf9AV5L2Oc8mJJzqYweewZ7ptKc6vb7U25jy-Qyrl2CEKRJZ7kavYv10BXpBNd0RCqk51BprBQPESD8wuwGzGtYMxYzQSL115xoeWHmCMwyspvqMiJgGVsAuVB4pcj6es9Bq5qLAhiV4ESdW84SkUp2KTL9EDiVq-WbraEbYS85vzxe_AXkH7bo?type=png)](https://mermaid.live/edit#pako:eNqlVM1q20AQfpVBkJ4ccvehEEuW5Th2jB1SqBTKWppIW8u7YldKauJADrmW0h96CBT30EMfodC3yQvUj9DdleLI-SktvWlH8833zXyze26FPEKracWCZAkcOgELGMDWFnQZzSlJwU4Ii1EHd_3dYRfGGYZAJYQmHgFlIHkhQgSBGZc052IOfaLCq-XHL6vl--83l29Xyw8_j2F7-_niBU4SzqdwKGgco8BoAS3f7u7YDgxphillCKOCSdiGfcpyICyCI5LSiOQIa_7V8tvn47VUO6WoUt2Un-mILCZlN1V87PRghDEyFCSn3KAAWloO2H6njONttqQRGkjFoXNtI31chCFKuQDHP8iQwXCkmy-rrzu_h4LOmhZcQlM1MEP76kQd_Jvrr79-vIMBz-nJHLxiRlizrvohuD7PksUxBdt-7Y_Sc0rxrAGHKPOGGWEfRYxKcQVqP-4FHAhwUPUWkRbPTS8LcP0BnlXNuu2dPp8oJTAU_DWGubKpkAhMZdybmWt0dTZ0uZRRmTSe1FdnMGWUkrXLYxSnKB66XMVttcdP2uzd2VxPr8n1Ni3ublhcQh532XvaZe8PLtdl_I3NXVNx75_GWdldH2JbCC7AUznqpsU6WK6i6X6z9pu766YgNY1dKQtU11ajvf9AV5L2Oc8mJJzqYweewZ7ptKc6vb7U25jy-Qyrl2CEKRJZ7kavYv10BXpBNd0RCqk51BprBQPESD8wuwGzGtYMxYzQSL115xoeWHmCMwyspvqMiJgGVsAuVB4pcj6es9Bq5qLAhiV4ESdW84SkUp2KTL9EDiVq-WbraEbYS85vzxe_AXkH7bo)
